@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arthur Marques | Desenvolvedor Web</title>
+
+<style>
+
+:root {
+    --cor-primaria: #0f172a;
+    --cor-destaque: #22c55e;
+    --cor-clara: #f8fafc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--cor-clara);
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background: var(--cor-primaria);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--cor-destaque);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #16a34a;
+}
+
+/* SECTIONS */
+section {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+.card button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: var(--cor-primaria);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* MODELOS */
+.modelo {
+    display: none;
+    padding: 50px 20px;
+    background: white;
+}
+
+.modelo img {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.fechar {
+    margin-top: 20px;
+    background: red;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    border-radius: 6px;
+}
+
+/* WHATSAPP FIXO */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+footer {
+    background: var(--cor-primaria);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Arthur Marques</h1>
+    <p>Desenvolvedor Web</p>
+</header>
+
+<section class="hero">
+    <h1>Sites Profissionais para Negócios Locais</h1>
+    <p>Ajudo empresas a venderem mais através de presença digital estratégica.</p>
+    <a href="https://wa.me/5553999270293?text=Olá,%20quero%20um%20site%20profissional." class="btn">Solicitar Orçamento</a>
+</section>
+
+<section>
+    <h2>Modelos de Layout</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1">
+            <h3>Barbearia</h3>
+            <button onclick="abrirModelo('barbearia')">Ver Modelo</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b">
+            <h3>Academia</h3>
+            <button onclick="abrirModelo('academia')">Ver Modelo</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8">
+            <h3>Loja</h3>
+            <button onclick="abrirModelo('loja')">Ver Modelo</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- MODELOS DETALHADOS -->
+
+<div id="barbearia" class="modelo">
+    <h2>Modelo Barbearia</h2>
+    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f">
+    <p>✔ Tabela de preços<br>✔ Galeria de cortes<br>✔ Agendamento via WhatsApp</p>
+    <a href="https://wa.me/5553999270293?text=Quero%20esse%20modelo%20de%20barbearia." class="btn">Quero Esse Modelo</a>
+    <br>
+    <button class="fechar" onclick="fecharModelos()">Fechar</button>
+</div>
+
+<div id="academia" class="modelo">
+    <h2>Modelo Academia</h2>
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48">
+    <p>✔ Planos mensais<br>✔ Estrutura moderna<br>✔ Botão de matrícula rápida</p>
+    <a href="https://wa.me/5553999270293?text=Quero%20esse%20modelo%20de%20academia." class="btn">Quero Esse Modelo</a>
+    <br>
+    <button class="fechar" onclick="fecharModelos()">Fechar</button>
+</div>
+
+<div id="loja" class="modelo">
+    <h2>Modelo Loja</h2>
+    <img src="https://images.unsplash.com/photo-1521334884684-d80222895322">
+    <p>✔ Exposição de produtos<br>✔ Vendas via WhatsApp<br>✔ Layout moderno</p>
+    <a href="https://wa.me/5553999270293?text=Quero%20esse%20modelo%20de%20loja." class="btn">Quero Esse Modelo</a>
+    <br>
+    <button class="fechar" onclick="fecharModelos()">Fechar</button>
+</div>
+
+<footer>
+    <p>© 2026 Arthur Marques</p>
+</footer>
+
+<a href="https://wa.me/5553999270293?text=Olá,%20quero%20um%20site." class="whatsapp">
+WhatsApp
+</a>
+
+<script>
+function abrirModelo(id) {
+    fecharModelos();
+    document.getElementById(id).style.display = "block";
+    window.scrollTo(0, document.getElementById(id).offsetTop);
+}
+
+function fecharModelos() {
+    document.getElementById("barbearia").style.display = "none";
+    document.getElementById("academia").style.display = "none";
+    document.getElementById("loja").style.display = "none";
+}
+</script>
+
+</body>
+</html>
